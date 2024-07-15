@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tình hình Việt hóa KDE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { font-family: monospace; }
+        #statsTable {width: 100%;}
+        #statsTable .graph-header { min-width: 1020px; width: 50%; }
+        #statsTable td, th { padding: 0 1em; }
+        #statsTable th { background-color: lightgrey; }
+        #statsTable tr:hover { background-color: whitesmoke;}
+        .folder { background-color: white; }
+        .file { display: none; }
+        .fileTitle { padding-left: 2em !important; }
+        .fileTitle::before { content: '/'; opacity: 0.4; }
+        .folderTitle { font-weight: bold; cursor: pointer; color:#0000EE; }
+        .folderTitle:hover { font-weight: bold; color:#FF0000; text-decoration: underline;}
+        .sortable { cursor: pointer; width: 8%; }
+        .item-header { width: 26%; }
+        .arrow { opacity: 0.3; }
+        .sorted-asc .arrow::before { content: '\25B4'; opacity: 1; }
+        .sorted-desc .arrow::after { content: '\25BE'; opacity: 1; }
+
+    </style>
+</head>
+<body>
+    <div style="text-align:center;"><h1>Tình hình Việt hóa KDE</h1></div>
+
+    <div>Dự án thuộc <a href="/">linuxviet</a> - <a href="https://github.com/caligraph-net/l10n-kf6-vi">Kho chứa code trên Github</a></div>
+    <div>Trang này hiển thị tiến độ Việt hóa các ứng dụng trong môi trường làm việc KDE bởi công nghệ của Caligraph. Bạn có thể chọn tệp theo từng giai đoạn ở ô bên dưới để xem tiến độ.</div>
+    <hr/>
+    <div class="field is-grouped">
+        <div class="control">
+            <select id="fileSelector" class="select">
+                <option value="">Chọn tệp</option>
+            </select>
+        </div>
+        <div class="control">
+            <div id="sumStats" class="tags">
+                <span class="tag is-success">Đã dịch: <span id="sumTranslated">0</span></span>
+                <span class="tag is-warning">Mù mờ: <span id="sumFuzzy">0</span></span>
+                <span class="tag is-danger">Chưa dịch: <span id="sumUntranslated">0</span></span>
+            </div>
+        </div>
+    </div>
+
+    <table id="statsTable">
+        <tr>
+            <th class="sortable item-header" data-sort="item">Ứng dụng/Tệp <span class="arrow"></span></th>
+            <th class="sortable" data-sort="translated">Đã dịch <span class="arrow"></span></th>
+            <th class="sortable" data-sort="fuzzy">Mù mờ <span class="arrow"></span></th>
+            <th class="sortable" data-sort="untranslated">Chưa dịch <span class="arrow"></span></th>
+            <th class="sortable" data-sort="total">Tổng <span class="arrow"></span></th>
+            <th class="graph-header">Đồ thị</th>
+        </tr>
+    </table>
+
+    <script src="stats.js"></script>
+</body>
+</html>
