@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tình hình Việt hóa KDE</title>
+    <title>KDE Vietnamese localization status</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -28,34 +28,34 @@
     </style>
 </head>
 <body>
-    <div style="text-align:center;"><h1>Tình hình Việt hóa KDE</h1></div>
+    <div style="text-align:center;"><h1>KDE Vietnamese localization status</h1></div>
 
-    <div>Dự án thuộc <a href="/">linuxviet</a> - <a href="https://github.com/caligraph-net/l10n-kf6-vi">Kho chứa code trên Github</a></div>
-    <div>Trang này hiển thị tiến độ Việt hóa các ứng dụng trong môi trường làm việc KDE bởi công nghệ của Caligraph. Bạn có thể chọn tệp theo từng giai đoạn ở ô bên dưới để xem tiến độ.</div>
+    <div>Part of <a href="../">linuxviet</a> - <a href="https://github.com/caligraph-net/l10n-kf6-vi">Github</a></div>
+    <div>This page shows the current progress of Vietnamese localization for KDE. Please choose a stats file below to compare progress.</div>
     <hr/>
     <div class="field is-grouped">
         <div class="control">
             <select id="fileSelector" class="select">
-                <option value="">Chọn tệp</option>
+                <option value="">Choose release</option>
             </select>
         </div>
         <div class="control">
             <div id="sumStats" class="tags">
-                <span class="tag is-success">Đã dịch: <span id="sumTranslated">0</span></span>
-                <span class="tag is-warning">Mù mờ: <span id="sumFuzzy">0</span></span>
-                <span class="tag is-danger">Chưa dịch: <span id="sumUntranslated">0</span></span>
+                <span class="tag is-success">Translated: <span id="sumTranslated">0</span></span>
+                <span class="tag is-warning">Fuzzy: <span id="sumFuzzy">0</span></span>
+                <span class="tag is-danger">Untranslated: <span id="sumUntranslated">0</span></span>
             </div>
         </div>
     </div>
 
     <table id="statsTable">
         <tr>
-            <th class="sortable item-header" data-sort="item">Ứng dụng/Tệp <span class="arrow"></span></th>
-            <th class="sortable" data-sort="translated">Đã dịch <span class="arrow"></span></th>
-            <th class="sortable" data-sort="fuzzy">Mù mờ <span class="arrow"></span></th>
-            <th class="sortable" data-sort="untranslated">Chưa dịch <span class="arrow"></span></th>
-            <th class="sortable" data-sort="total">Tổng <span class="arrow"></span></th>
-            <th class="graph-header">Đồ thị</th>
+            <th class="sortable item-header" data-sort="item">Item <span class="arrow"></span></th>
+            <th class="sortable" data-sort="translated">Translated <span class="arrow"></span></th>
+            <th class="sortable" data-sort="fuzzy">Fuzzy <span class="arrow"></span></th>
+            <th class="sortable" data-sort="untranslated">Untranslated <span class="arrow"></span></th>
+            <th class="sortable" data-sort="total">Total <span class="arrow"></span></th>
+            <th class="graph-header">Graph</th>
         </tr>
     </table>
 
